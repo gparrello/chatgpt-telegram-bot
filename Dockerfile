@@ -14,7 +14,6 @@ RUN pip install --user pipenv --no-cache-dir
 
 WORKDIR /home/appuser/app
 COPY . .
-COPY .env .
 
 RUN pipenv install --system --deploy --ignore-pipfile
 
