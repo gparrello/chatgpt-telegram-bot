@@ -1,9 +1,14 @@
+volumes:
+  usage_logs:
+
 services:
   chatgpt-telegram-bot:
     build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
+    volumes:
+      - usage_logs:/usage_logs
     environment:
       - OPENAI_API_KEY
       - TELEGRAM_BOT_TOKEN
