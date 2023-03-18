@@ -45,7 +45,7 @@ class ChatGPT3TelegramBot:
                     '\n\n' + \
                     'Send me a voice message or file and I\'ll transcribe it for you!' + \
                     '\n\n' + \
-                    "Open source at https://github.com/n3d1117/chatgpt-telegram-bot"
+                    "Open source at https://github.com/gparrello/chatgpt-telegram-bot"
         await update.message.reply_text(help_text, disable_web_page_preview=True)
 
 
