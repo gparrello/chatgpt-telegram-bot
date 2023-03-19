@@ -1,7 +1,7 @@
 FROM python:3.10-slim
 
 RUN apt-get update && \
-    apt-get install ffmpeg -y && \
+    apt-get install ffmpeg curl -y && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m appuser
