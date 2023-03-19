@@ -14,5 +14,7 @@ RUN pip install --user pipenv --no-cache-dir
 COPY --chown=appuser:appuser Pipfile* ./
 RUN pipenv install --system --deploy --ignore-pipfile
 
+COPY --chown=appuser:appuser health.sh ./
+
 COPY --chown=appuser:appuser app ./
 CMD ["python", "main.py"]

@@ -4,8 +4,7 @@ volumes:
 services:
   chatgpt-telegram-bot:
     healthcheck:
-#      test: 'curl -m 90 -sLf -H "Authorization: Bearer ${OPENAI_API_KEY}" https://api.openai.com/v1/models && curl -m 90 -sLf "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe"'
-      test: 'curl -m 90 -sLf "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe"'
+      test: 'bash /home/appuser/health.sh'
       interval: 5m
       timeout: 60s
       retries: 2
