@@ -5,7 +5,7 @@ services:
   chatgpt-telegram-bot:
     healthcheck:
       test: 'bash /home/appuser/health.sh'
-      interval: 5m
+      interval: 90s
       timeout: 60s
       retries: 2
     build:
