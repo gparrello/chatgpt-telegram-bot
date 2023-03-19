@@ -1,9 +1,19 @@
+volumes:
+  usage_logs:
+
 services:
   chatgpt-telegram-bot:
+    healthcheck:
+      test: 'bash /home/appuser/health.sh'
+      interval: 90s
+      timeout: 60s
+      retries: 2
     build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
+    volumes:
+      - usage_logs:/home/appuser/usage_logs:rw
     environment:
       - OPENAI_API_KEY
       - TELEGRAM_BOT_TOKEN
